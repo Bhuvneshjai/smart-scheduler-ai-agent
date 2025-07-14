@@ -107,7 +107,6 @@ pip freeze > requirements.txt
 
 ## 📌 Notes
 
-- Do **not commit** `.env` or `venv/` folders — they're in `.gitignore`
 - You must enable **Google Calendar API** in your GCP Console
 - This bot can be extended with:
   - Voice input (e.g., SpeechRecognition or WebRTC)
