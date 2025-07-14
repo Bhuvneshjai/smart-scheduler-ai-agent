@@ -125,4 +125,4 @@ pip freeze > requirements.txt
 
 ## 🪄 License
 
-MIT © 2025 Smart Scheduler AI Team
+2025 Smart Scheduler AI Team
