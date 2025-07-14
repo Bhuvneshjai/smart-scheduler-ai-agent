@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Scheduler</title>
+</head>
+<body>
+  <h2>🧠 Smart Scheduler AI</h2>
+  <input type="text" id="userInput" placeholder="e.g. Schedule a meeting on Friday" size="40"/>
+  <button onclick="send()">Send</button>
+  <div id="response"></div>
+  <script>
+    async function send() {
+      const input = document.getElementById('userInput').value;
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input })
+      });
+      const data = await res.json();
+      document.getElementById('response').innerHTML =
+        `<p><b>Bot:</b> ${data.reply}</p><p><b>Available Slots:</b> ${data.available_slots.join(', ')}</p>`;
+    }
+  </script>
+</body>
+</html>
